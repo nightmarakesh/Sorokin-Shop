@@ -119,7 +119,7 @@ a {
 
 .search-form {
     position: relative;
-    width: 100%;
+    width: 150%;
 }
 
 .search-form__label {
@@ -153,7 +153,7 @@ a {
 
 .search-form__button {
     position: absolute;
-    top: 50%;
+    top: 80%;
     right: 4px;
     display: flex;
     align-items: center;
@@ -164,7 +164,7 @@ a {
     background: transparent;
     border: 0;
     border-radius: var(--radius-sm);
-    transform: translateY(-50%);
+    transform: translateY(-80%);
 }
 
 .search-form__button:hover {
@@ -393,5 +393,629 @@ a {
 
     .placeholder-section {
         padding: 32px 20px;
+    }
+}
+/* Главная страница */
+
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    min-height: 520px;
+    margin-bottom: 96px;
+    padding: 64px;
+    overflow: hidden;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.hero-section__content {
+    max-width: 560px;
+}
+
+.hero-section__label,
+.section-heading__label,
+.brand-banner__label,
+.newsletter-section__label {
+    margin: 0 0 16px;
+    color: var(--color-red);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.hero-section__title {
+    max-width: 560px;
+    margin: 0 0 24px;
+    font-size: clamp(42px, 6vw, 80px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+}
+
+.hero-section__title span {
+    color: #ff5b57;
+}
+
+.hero-section__description {
+    max-width: 420px;
+    margin: 0 0 32px;
+    color: #cccccc;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.hero-section__button,
+.brand-banner__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 700;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-section__button:hover,
+.brand-banner__button:hover {
+    background-color: #eeeeee;
+    transform: translateY(-2px);
+}
+
+.hero-section__visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+}
+
+.hero-section__circle {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 340px;
+    height: 340px;
+    color: #666666;
+    border: 1px solid #444444;
+    border-radius: 50%;
+    transform: rotate(-16deg);
+}
+
+.hero-section__circle span {
+    font-size: 54px;
+    font-weight: 800;
+    letter-spacing: -4px;
+    opacity: 0.35;
+}
+
+.hero-section__shoe {
+    position: relative;
+    z-index: 1;
+    font-size: 180px;
+    transform: rotate(-15deg);
+}
+
+/* Заголовки секций */
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.section-heading--center {
+    display: block;
+    text-align: center;
+}
+
+.section-heading__label {
+    margin-bottom: 8px;
+}
+
+.section-heading__title {
+    margin: 0;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: -1.5px;
+}
+
+.section-heading__link {
+    padding-bottom: 6px;
+    color: var(--color-gray-500);
+    border-bottom: 1px solid var(--color-black);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.section-heading__link:hover {
+    color: var(--color-red);
+    border-color: var(--color-red);
+}
+
+/* Секции */
+
+.categories-section,
+.products-section,
+.benefits-section {
+    margin-bottom: 96px;
+}
+
+/* Категории */
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.category-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 280px;
+    padding: 24px;
+    overflow: hidden;
+    color: var(--color-white);
+    border-radius: var(--radius-md);
+    transition: transform 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-card::before {
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(
+                    180deg,
+                    transparent 25%,
+                    rgb(0 0 0 / 75%) 100%
+            );
+    content: '';
+}
+
+.category-card--men {
+    background-color: #43515a;
+}
+
+.category-card--women {
+    background-color: #a36d6d;
+}
+
+.category-card--sport {
+    background-color: #716b56;
+}
+
+.category-card__content {
+    position: relative;
+    z-index: 1;
+}
+
+.category-card__number {
+    display: block;
+    margin-bottom: 64px;
+    color: rgb(255 255 255 / 65%);
+    font-size: 13px;
+}
+
+.category-card h3 {
+    margin: 0 0 12px;
+    font-size: 28px;
+}
+
+.category-card__link {
+    color: rgb(255 255 255 / 80%);
+    font-size: 13px;
+}
+
+/* Товары */
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    min-width: 0;
+}
+
+.product-card__image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    overflow: hidden;
+    background-color: var(--color-gray-100);
+    border-radius: var(--radius-md);
+}
+
+.product-card__placeholder {
+    font-size: 120px;
+    transform: rotate(-15deg);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-card__placeholder {
+    transform: rotate(-15deg) scale(1.1);
+}
+
+.product-card__badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 1;
+    padding: 6px 9px;
+    color: var(--color-white);
+    background-color: var(--color-red);
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.product-card__favorite {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    color: var(--color-black);
+    background-color: rgb(255 255 255 / 80%);
+    border: 0;
+    border-radius: 50%;
+    font-size: 23px;
+    line-height: 1;
+}
+
+.product-card__favorite:hover {
+    color: var(--color-red);
+}
+
+.product-card__content {
+    padding: 16px 4px;
+}
+
+.product-card__brand {
+    margin: 0 0 6px;
+    color: var(--color-gray-500);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.product-card__title {
+    margin: 0 0 18px;
+    font-size: 16px;
+}
+
+.product-card__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.product-card__price {
+    font-size: 16px;
+}
+
+.product-card__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border: 0;
+    border-radius: 50%;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.product-card__button:hover {
+    background-color: var(--color-red);
+}
+
+/* Баннер бренда */
+
+.brand-banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    min-height: 380px;
+    margin-bottom: 96px;
+    padding: 56px 64px;
+    overflow: hidden;
+    color: var(--color-white);
+    background-color: #242424;
+    border-radius: var(--radius-md);
+}
+
+.brand-banner__content {
+    max-width: 480px;
+}
+
+.brand-banner__title {
+    margin: 0 0 20px;
+    font-size: clamp(32px, 4vw, 58px);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.brand-banner__description {
+    max-width: 360px;
+    margin: 0 0 28px;
+    color: #bdbdbd;
+    line-height: 1.6;
+}
+
+.brand-banner__button {
+    color: var(--color-white);
+    background-color: var(--color-red);
+}
+
+.brand-banner__button:hover {
+    color: var(--color-black);
+    background-color: var(--color-white);
+}
+
+.brand-banner__visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+}
+
+.brand-banner__visual span {
+    color: #3b3b3b;
+    font-size: clamp(120px, 18vw, 280px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -20px;
+}
+
+/* Преимущества */
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.benefit-card {
+    padding: 28px 20px;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.benefit-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 20px;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.benefit-card h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+
+.benefit-card p {
+    margin: 0;
+    color: var(--color-gray-500);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Подписка */
+
+.newsletter-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-bottom: 96px;
+    padding: 48px 56px;
+    background-color: var(--color-gray-100);
+    border-radius: var(--radius-md);
+}
+
+.newsletter-section__content h2 {
+    margin: 0 0 20px;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1;
+    letter-spacing: -1.5px;
+}
+
+.newsletter-section__content > p:last-child {
+    max-width: 440px;
+    margin: 0;
+    color: var(--color-gray-500);
+    line-height: 1.6;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 8px;
+}
+
+.newsletter-form__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.newsletter-form__input {
+    flex: 1;
+    min-width: 0;
+    height: 48px;
+    padding: 0 16px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    outline: none;
+}
+
+.newsletter-form__input:focus {
+    border-color: var(--color-black);
+}
+
+.newsletter-form__button {
+    height: 48px;
+    padding: 0 20px;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border: 0;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+}
+
+.newsletter-form__button:hover {
+    background-color: var(--color-red);
+}
+
+/* Footer */
+
+.site-footer {
+    padding: 28px 40px;
+    color: var(--color-gray-500);
+    border-top: 1px solid var(--color-border);
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Адаптивность главной страницы */
+
+@media (max-width: 1000px) {
+    .hero-section,
+    .brand-banner {
+        padding: 48px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .hero-section,
+    .brand-banner,
+    .newsletter-section {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-section {
+        min-height: auto;
+        margin-bottom: 64px;
+        padding: 40px 24px;
+    }
+
+    .hero-section__visual {
+        min-height: 240px;
+    }
+
+    .hero-section__circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-section__circle span {
+        font-size: 36px;
+    }
+
+    .hero-section__shoe {
+        font-size: 120px;
+    }
+
+    .categories-section,
+    .products-section,
+    .benefits-section,
+    .brand-banner,
+    .newsletter-section {
+        margin-bottom: 64px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        min-height: 220px;
+    }
+
+    .category-card__number {
+        margin-bottom: 36px;
+    }
+
+    .brand-banner {
+        padding: 40px 24px;
+    }
+
+    .brand-banner__visual {
+        min-height: 160px;
+    }
+
+    .newsletter-section {
+        padding: 32px 24px;
+    }
+}
+
+@media (max-width: 520px) {
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading__link {
+        display: inline-block;
+        margin-top: 16px;
+    }
+
+    .products-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form__button {
+        width: 100%;
     }
 }
