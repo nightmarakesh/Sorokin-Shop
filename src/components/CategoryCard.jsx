@@ -1,18 +1,19 @@
-const CategoryCard = () => {
+const CategoryCard = (props) => {
+    const {
+        className = 'category-card',
+        category,
+        title,
+        description = 'Смотреть модели →'
+    } = props
   return (
       <a
-          className="category-card category-card--sport"
-          href="/catalog?category=sport"
+          className={`${className} ${className}--${category}`}
+          href={`/catalog?category=${category}`}
       >
-          <div className="category-card__content">
-                <span className="category-card__number">
-                  03
-                </span>
-
-              <h3>Для спорта</h3>
-
-              <span className="category-card__link">
-                  Смотреть модели →
+          <div className={`${className}__content`}>
+              <h3>{title}</h3>
+              <span className={`${className}__link`}>
+                  {description}
                 </span>
           </div>
       </a>

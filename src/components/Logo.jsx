@@ -1,12 +1,12 @@
-const Logo = () => {
+const Logo = ({className, title, href='/',label, mark}) => {
     return (
         <a
-            className="logo"
-            href="/"
-            aria-label="SorokinShop — на главную"
+            className={className}
+            href={href}
+            aria-label={label}
         >
-            <span className="logo__mark">SS</span>
-            <span className="logo__text">SorokinShop</span>
+            <span className={`${className}__mark`}>{mark}</span>
+            <span className="logo__text">{title}</span>
         </a>
     )
 }

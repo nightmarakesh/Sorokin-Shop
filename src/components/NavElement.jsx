@@ -1,11 +1,15 @@
-const NavElement = () => {
+const NavElement = ({className,href,label}) => {
+
+
+    //В перспективе добавить возможность комбинировать стили через переключаетль mark
     return (
         <li>
             <a
-                className="main-nav__link main-nav__link--sale"
-                href="/catalog?category=sale"
+                className={className}
+                href={href}
+                aria-label={label}
             >
-                Скидки
+                {label}
             </a>
         </li>
     )

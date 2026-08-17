@@ -22,6 +22,7 @@ const HomePage = () => {
 
             {/* Преимущества */}
             <Benefits />
+
             {/* Подписка */}
             <Newsletter />
         </main>

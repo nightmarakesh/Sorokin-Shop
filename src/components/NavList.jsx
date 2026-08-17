@@ -1,50 +1,25 @@
 import NavElement from "./NavElement.jsx";
 
-const NavList = () => {
+const NavList = (props) => {
+   // в перспективе сдеалать проп currentDir, что бы href мог отличаться в зависимости от текущей директории.
+    const {
+        className,
+        navItems = []
+    } = props;
     return (
-        <ul className="main-nav__list">
-            <li>
-                <a
-                    className="main-nav__link main-nav__link--active"
-                    href="/">
-                    Главная
-                </a>
-            </li>
-            <li>
-                <a
-                    className="main-nav__link"
-                    href="/catalog"
-                >
-                    Каталог
-                </a>
-            </li>
-            <li>
-                <a
-                    className="main-nav__link"
-                    href="/catalog?category=men"
-                >
-                    Для мужчин жи есть
-                </a>
-            </li>
-            <li>
-                <a
-                    className="main-nav__link"
-                    href="/catalog?category=woomen"
-                >
-                    Для женщин
-                </a>
-            </li>
-            <li>
-                <a
-                    className="main-nav__link"
-                    href="/catalog?category=new"
+        <nav className={className}>
+            <ul className={`${className}__list`}>
+                {navItems.map(({label, href,classNameMark}) => (
+                    <NavElement
+                        key={label}
+                        label={label}
+                        href={href}
+                        className={`${className}__link ${className}__link${classNameMark}`}
+                    />
+                ))}
+            </ul>
+        </nav>
 
-                >
-                    Новинки
-                </a>
-            </li>
-            <NavElement />
-        </ul>
     )
 }
 

@@ -1,29 +1,32 @@
-const Form = () => {
-  return (
-      <form className="newsletter-form">
-          <label
-              className="newsletter-form__label"
-              htmlFor="email"
-          >
-              Email
-          </label>
+import Field from "./Field.jsx";
+import Button from "./Button.jsx";
 
-          <input
-              className="newsletter-form__input"
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Твой email"
-          />
-
-          <button
-              className="newsletter-form__button"
-              type="submit"
-          >
-              Подписаться
-          </button>
-      </form>
-  )
+const Form = (props) => {
+    const {
+        className,
+        id,
+        typeButton,
+        typeField = id,
+        placeholder = 'Введите...',
+        label = id,
+        text
+    } = props
+    return (
+        <form className={className}>
+            <Field
+                className={className}
+                id={id}
+                label={label}
+                type={typeField}
+                placeholder={placeholder}
+            />
+            <Button
+                className={className}
+                type={typeButton}
+                children={text}
+            />
+        </form>
+    )
 }
 
 export default Form;

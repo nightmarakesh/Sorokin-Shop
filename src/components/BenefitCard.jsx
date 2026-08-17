@@ -1,14 +1,21 @@
-const BenefitCard = () => {
+const BenefitCard = (props) => {
+    const {
+        description,
+        title,
+        icon
+    } = props;
   return (
       <article className="benefit-card">
           <div className="benefit-card__icon">
-              ♥
+              {icon}
           </div>
 
-          <h3>Помощь с выбором</h3>
+          <h3>
+              {title}
+          </h3>
 
           <p>
-              Наши консультанты помогут подобрать пару.
+              {description}
           </p>
       </article>
   )
