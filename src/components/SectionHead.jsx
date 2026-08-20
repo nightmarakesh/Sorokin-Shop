@@ -1,7 +1,7 @@
 const SectionHead = (props) => {
-    const { title='Заголовок',
-            label = 'Подпись',
-            href = '/',
+    const { title,
+            label ,
+            href ,
             children,
             className = ''
 

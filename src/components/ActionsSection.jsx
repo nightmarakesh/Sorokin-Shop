@@ -7,6 +7,7 @@ const ActionsSection = (props) => {
         <div className="header-actions">
             {actions.map(({label,href,icon, counter}) => (
                 <ActionsElement
+                    key = {label}
                     label={label}
                     href={href}
                     counter = {counter}

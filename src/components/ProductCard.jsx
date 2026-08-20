@@ -7,16 +7,21 @@ const ProductCard = (props) => {
      brand,
      model,
      price,
-     marker = null
+     marker = null,
+     onAddToCart
  } = props;
-    console.log('DEBUG ProductCard marker:', marker, typeof marker);
+    const ID = `product-${model}`;
+    // console.log('ProductCard ID:', ID);
   return (
-      <article className="product-card">
+
+      <article className="product-card" id={ID}>
             <ProductImg />
             <ProductGeneral
                 brand = {brand}
                 model={model}
                 price = {price}
+                onAddToCart = {onAddToCart}
+                id = {ID}
             />
           {marker !== null && <Marker text = {marker}/>}
 

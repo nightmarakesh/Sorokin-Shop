@@ -4,9 +4,11 @@ const ProductGeneral = (props) => {
 const {
     brand = `Moccasins`,
     model=`Gentelmens Classic`,
-    price = 'Free'
-
+    price = 'Free',
+    id,
+    onAddToCart,
         } = props;
+
     return (
 
         <div className="product-card__content">
@@ -26,6 +28,10 @@ const {
                     className="product-card"
                     type="button"
                     aria_label="Добавить товар в корзину"
+                    onClick={() => {
+                        onAddToCart(id)
+                    }
+                    }
                 >
                     +
                 </Button>

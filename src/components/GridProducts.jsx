@@ -1,8 +1,10 @@
 import ProductCard from "./ProductCard.jsx";
 const GridProducts = (props) => {
     const {
-        products=[]
-        } = props;
+        products=[],
+        onAddToCart
+    } = props;
+
     return (
         <div className="products-grid">
             {products.map(({brand,model,price,marker}) => (
@@ -12,7 +14,9 @@ const GridProducts = (props) => {
                     model= {model}
                     price = {price}
                     marker = {marker}
+                    onAddToCart = {onAddToCart}
                 />
+
             ))}
         </div>
     )

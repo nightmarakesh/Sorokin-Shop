@@ -4,7 +4,9 @@ const Field = (props) => {
         id,
         label='',
         type='text',
-        placeholder
+        placeholder,
+        value,
+        onInput
     } = props
     return (
         <>
@@ -21,6 +23,8 @@ const Field = (props) => {
                 name={id}
                 type={type}
                 placeholder={placeholder}
+                value={value}
+                onInput={onInput}
             />
         </>
     )

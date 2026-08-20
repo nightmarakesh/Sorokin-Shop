@@ -1,14 +1,15 @@
 import Field from "./Field.jsx";
 import Button from "./Button.jsx";
-import Form from "./Form.jsx";
 
-const SearchForm = () => {
+const SearchForm = ({searchQuery,setSearchQuery}) => {
     return (
         <form className="search-form">
             <Field
                 className="search-form"
                 id="search"
                 type="search"
+                value={searchQuery}
+                onInput={(event) => setSearchQuery(event.target.value)}
                 placeholder="Поиск..."
                 label="Поиск по каталогу"
             />

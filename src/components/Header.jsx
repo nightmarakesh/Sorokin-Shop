@@ -7,19 +7,21 @@ import IconFavorite from "./IconFavorite.jsx";
 import IconCart from "./IconCart.jsx";
 import IconProfile from "./IconProfile.jsx";
 
-const Header = () => {
+const Header = ({cartCount }) => {
+
+    const path = window.location.pathname;
     const navItems = [
-        {label: 'Главная', href : '/', classNameMark : '--active' },
-        {label: 'Каталог', href : '/catalog', classNameMark : ''},
-        {label: 'Для мужчин', href : '/catalog?category=men', classNameMark : ''},
-        {label: 'Для женщин', href : '/catalog?category=women', classNameMark : ''},
-        {label: 'Новинки', href : '/catalog?category=new', classNameMark : ''},
-        {label: 'Скидки', href : '/catalog?category=sale', classNameMark : '--sale'}
+        {label: 'Главная', href : '/', classNameMark : path === '/' ? '--active' : '' },
+        {label: 'Каталог', href : '/catalog', classNameMark : path === '/catalog' ? '--active' : '' },
+        {label: 'Для мужчин', href : '/catalog?category=men', classNameMark : path === '/catalog?category=men' ? '--active' : '' },
+        {label: 'Для женщин', href : '/catalog?category=women', classNameMark : path === '/catalog?category=women' ? '--active' : '' },
+        {label: 'Новинки', href : '/catalog?category=new', classNameMark : path === '/catalog?category=new' ? '--active' : '' },
+        {label: 'Скидки', href : '/catalog?category=sale', classNameMark : '--sale' }
     ]
     const actions = [
         {label : 'Избранное', href : '/favorites', icon : <IconFavorite/>, counter : null},
         {label : 'Профиль', href : '/profile', icon : <IconProfile/>, counter : null},
-        {label : 'Корзина', href : '/cart', icon : <IconCart/>, counter : 0},
+        {label : 'Корзина', href : '/cart', icon : <IconCart/>, counter : cartCount},
     ]
     return (
         <header className="site-header">
@@ -32,7 +34,10 @@ const Header = () => {
                     title="SorokinShop"
                     label="SorokinShop — на главную"
                 />
-                <SearchForm />
+                <SearchForm
+                    // searchQuery = {searchQuery}
+                    // setSearchQuery ={searchQuery}
+                />
                 <ActionsSection actions = {actions}/>
             </div>
             <NavList
