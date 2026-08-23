@@ -17,11 +17,10 @@ export const useRoute = () => {
 
 }
 
-const Router = (props) =>{
-    const {routes, onAddToCart, cartCount} = props
+const Router = ({routes}) =>{
     const path = useRoute()
     const Page = routes[path] ?? routes['*']
-    return <Page cartCount={cartCount} onAddToCart={onAddToCart} />;
+    return <Page />;
 }
 
 export default Router
