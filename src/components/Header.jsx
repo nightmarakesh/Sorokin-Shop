@@ -6,9 +6,13 @@ import ActionsSection from "./ActionsSection.jsx";
 import IconFavorite from "./IconFavorite.jsx";
 import IconCart from "./IconCart.jsx";
 import IconProfile from "./IconProfile.jsx";
-
-const Header = ({cartCount }) => {
-
+import {useCart} from "../context/CartContext.jsx";
+const Header = (props) => {
+    const {
+        setSearchQuery,
+        searchQuery
+    } = props;
+    const {cartCount} = useCart();
     const path = window.location.pathname;
     const navItems = [
         {label: 'Главная', href : '/', classNameMark : path === '/' ? '--active' : '' },
@@ -35,8 +39,8 @@ const Header = ({cartCount }) => {
                     label="SorokinShop — на главную"
                 />
                 <SearchForm
-                    // searchQuery = {searchQuery}
-                    // setSearchQuery ={searchQuery}
+                    searchQuery = {searchQuery}
+                    setSearchQuery ={setSearchQuery}
                 />
                 <ActionsSection actions = {actions}/>
             </div>

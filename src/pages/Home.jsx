@@ -5,12 +5,16 @@ import Footer from "../components/Footer.jsx";
 const Home = (props) => {
     const {
         cartCount,
-        onAddToCart
+        onAddToCart,
+        searchQuery,
+        setSearchQuery
     } = props
     return (
         <>
             <Header
                 cartCount={cartCount}
+                searchQuery = {searchQuery}
+                setSearchQuery = {setSearchQuery}
             />
             <HomePage
                 onAddToCart={onAddToCart}

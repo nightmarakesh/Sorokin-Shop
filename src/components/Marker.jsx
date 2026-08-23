@@ -1,12 +1,12 @@
-const Marker = (props) => {
-    const {
-        text
-    } = props;
+const Marker = ({ text }) => {
+    const displayText = typeof text === 'object' && text !== null ? text.text : text;
+    if (!displayText) return null;
+
     return (
         <span className="product-card__badge">
-                  {text}
-        </span>
-    )
-}
+      {displayText}
+    </span>
+    );
+};
 
 export default Marker;

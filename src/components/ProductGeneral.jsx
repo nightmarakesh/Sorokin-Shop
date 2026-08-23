@@ -1,13 +1,14 @@
 import Button from "./Button.jsx";
+import {useCart} from "../context/CartContext.jsx";
 
 const ProductGeneral = (props) => {
 const {
-    brand = `Moccasins`,
-    model=`Gentelmens Classic`,
-    price = 'Free',
-    id,
-    onAddToCart,
-        } = props;
+    brand,
+    model,
+    price,
+    id
+} = props;
+    const {onAddToCart} = useCart()
 
     return (
 

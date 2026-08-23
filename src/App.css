@@ -1018,3 +1018,44 @@ a {
         width: 100%;
     }
 }
+/* Стиль для ошибки по переходу страницы, потом переделать  */
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    min-height: 880px;
+    background-color: #b6b6b6;
+    text-align: center;
+}
+
+.error__number {
+    font-size: clamp(80px, 12vw, 160px); /* цифры крупнее остального текста */
+    font-weight: 900;
+    color: #2c3e50;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.error__message {
+    font-size: clamp(16px, 2vw, 24px);
+    color: #7f8c8d;
+    max-width: 600px;
+}
+
+.btn {
+    margin-top: 24px;
+    padding: 12px 28px;
+    background-color: #133e5a;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1e73b3;
+}
+

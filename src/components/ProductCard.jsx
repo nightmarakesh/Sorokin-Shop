@@ -8,23 +8,19 @@ const ProductCard = (props) => {
      model,
      price,
      marker = null,
-     onAddToCart
+     id
  } = props;
-    const ID = `product-${model}`;
-    // console.log('ProductCard ID:', ID);
-  return (
 
-      <article className="product-card" id={ID}>
+  return (
+      <article className="product-card">
             <ProductImg />
             <ProductGeneral
                 brand = {brand}
                 model={model}
                 price = {price}
-                onAddToCart = {onAddToCart}
-                id = {ID}
+                id = {id}
             />
           {marker !== null && <Marker text = {marker}/>}
-
       </article>
   )
 }

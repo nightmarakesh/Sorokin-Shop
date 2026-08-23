@@ -1,30 +1,35 @@
-import {useState} from "react";
 import SectionHead from "./SectionHead.jsx";
 import GridProducts from "./GridProducts.jsx";
-
+import {useProducts} from "../context/ProductContext.jsx";
 const ProductsSection = (props) => {
     const {
-        onAddToCart,
-        products = [],
         headTitle,
         headLabel,
         hrefHead,
         textButHead,
-
+        filteredProducts
     } = props;
-
-    const [productList, setProductList] = useState(products);
+    const allProducts = useProducts();
+    const hasProducts = allProducts.length > 0;
+    const findProduct =  filteredProducts?.length;
+    const isEmptyFiltered = findProduct === 0;
+    if (isEmptyFiltered && hasProducts) {
+        return (
+            <SectionHead
+            label = {'По вашему запросу ничего не найдено :('}
+        />
+        )
+    }
     return (
       <section className="products-section">
           <SectionHead
                 title ={headTitle}
-                label ={headLabel}
+                label = {findProduct > 0 ? `По вашему запросу найдено ${findProduct} товаров` : headLabel}
                 href={hrefHead}
                 children={textButHead}
           />
           <GridProducts
-              products = { productList }
-              onAddToCart = {onAddToCart}
+              filteredProducts = { filteredProducts }
           />
       </section>
   )
