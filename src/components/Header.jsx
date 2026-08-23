@@ -7,11 +7,7 @@ import IconFavorite from "./IconFavorite.jsx";
 import IconCart from "./IconCart.jsx";
 import IconProfile from "./IconProfile.jsx";
 import {useCart} from "../context/CartContext.jsx";
-const Header = (props) => {
-    const {
-        setSearchQuery,
-        searchQuery
-    } = props;
+const Header = ({searchQuery, setSearchQuery}) => {
     const {cartCount} = useCart();
     const path = window.location.pathname;
     const navItems = [
@@ -40,7 +36,7 @@ const Header = (props) => {
                 />
                 <SearchForm
                     searchQuery = {searchQuery}
-                    setSearchQuery ={setSearchQuery}
+                    setSearchQuery = {setSearchQuery}
                 />
                 <ActionsSection actions = {actions}/>
             </div>

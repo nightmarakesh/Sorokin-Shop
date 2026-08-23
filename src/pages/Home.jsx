@@ -2,23 +2,11 @@ import Header from "../components/Header.jsx";
 import HomePage from "../components/HomePage.jsx";
 import Footer from "../components/Footer.jsx";
 
-const Home = (props) => {
-    const {
-        cartCount,
-        onAddToCart,
-        searchQuery,
-        setSearchQuery
-    } = props
+const Home = () => {
     return (
         <>
-            <Header
-                cartCount={cartCount}
-                searchQuery = {searchQuery}
-                setSearchQuery = {setSearchQuery}
-            />
-            <HomePage
-                onAddToCart={onAddToCart}
-            />
+            <Header />
+            <HomePage />
             <Footer />
         </>
 

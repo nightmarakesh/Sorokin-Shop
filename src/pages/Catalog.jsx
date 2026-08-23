@@ -3,8 +3,8 @@ import Footer from "../components/Footer.jsx";
 import CatalogPage from "../components/CatalogPage.jsx";
 import {useState} from "react";
 import {useProducts} from "../context/ProductContext.jsx";
-const {allProducts} = useProducts();
 const Catalog = () => {
+    const allProducts = useProducts();
     const [searchQuery, setSearchQuery] = useState("");
     const clearSearchQuery = searchQuery.trim().toLowerCase();
     const filteredProducts =  clearSearchQuery.length > 0

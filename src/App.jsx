@@ -15,7 +15,7 @@ function App() {
             <div className={'error__number'}>404</div>
             <div className={'error__message'}>
                 <p>Страница не найдена.</p>
-                <p> Ccылка устарела или адрес введен не верно.</p>
+                <p> Cсылка устарела или адрес введен не верно.</p>
             </div>
             <a href="/" className="btn">На главную</a>
         </div>,

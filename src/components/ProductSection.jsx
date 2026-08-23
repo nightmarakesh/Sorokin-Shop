@@ -1,16 +1,15 @@
 import SectionHead from "./SectionHead.jsx";
 import GridProducts from "./GridProducts.jsx";
-import {useProducts} from "../context/ProductContext.jsx";
 const ProductsSection = (props) => {
     const {
         headTitle,
         headLabel,
         hrefHead,
         textButHead,
-        filteredProducts
+        filteredProducts,
+        products
     } = props;
-    const allProducts = useProducts();
-    const hasProducts = allProducts.length > 0;
+    const hasProducts = products.length > 0;
     const findProduct =  filteredProducts?.length;
     const isEmptyFiltered = findProduct === 0;
     if (isEmptyFiltered && hasProducts) {
@@ -27,8 +26,10 @@ const ProductsSection = (props) => {
                 label = {findProduct > 0 ? `По вашему запросу найдено ${findProduct} товаров` : headLabel}
                 href={hrefHead}
                 children={textButHead}
+                className={findProduct > 0 ? '--black' : ''}
           />
           <GridProducts
+              products = {products}
               filteredProducts = { filteredProducts }
           />
       </section>

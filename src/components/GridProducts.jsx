@@ -1,7 +1,5 @@
 import ProductCard from "./ProductCard.jsx";
-import {useProducts} from "../context/ProductContext.jsx";
-const GridProducts = ({filteredProducts}) => {
-    const products= useProducts();
+const GridProducts = ({filteredProducts, products}) => {
     return (
         <div className="products-grid">
             {(filteredProducts ?? products).map((product) => (

@@ -1,8 +1,8 @@
 const rawProducts = [
-    { brand: 'Puma', model: 'Air Max Pulse', price: '15 990 ₽', marker: null },
+    { brand: 'Puma', model: 'Air Max Pulse', price: '15 990 ₽', marker: 'Новинка' },
     { brand: 'New Balance', model: 'Forum Low', price: '11 990 ₽', marker: null },
-    { brand: 'Adidas', model: '574 Core', price: '13 990 ₽', marker: null },
-    { brand: 'Nike', model: 'Suede Classic', price: '9 990 ₽', marker: null },
+    { brand: 'Adidas', model: '574 Core', price: '13 990 ₽', marker: 'Хит' },
+    { brand: 'Nike', model: 'Suede Classic', price: '9 990 ₽', marker: 'Распродажа' },
     { brand: 'Reebok', model: 'Club C 85', price: '10 490 ₽', marker: null },
     { brand: 'Asics', model: 'Gel-Lyte III', price: '14 290 ₽', marker: null },
     { brand: 'Converse', model: 'Chuck Taylor All Star', price: '8 990 ₽', marker: null },
@@ -25,3 +25,5 @@ export const allProducts = rawProducts.map((product, index) => ({
     ...product,
     id: `product-${index}`
 }));
+
+export const popularProducts = allProducts.slice(0,4);
