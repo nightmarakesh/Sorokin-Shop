@@ -28,23 +28,6 @@ const SearchForm = ({searchQuery,setSearchQuery}) => {
                 <path d="m16 16 5 5" />
             </svg>
             </Button>
-            {/*<Form*/}
-            {/*    className="search-form"*/}
-            {/*    id="search"*/}
-            {/*    typeButton = "search"*/}
-            {/*    typeField = "search"*/}
-            {/*    placeholder = "Введите поисковой запрос..."*/}
-            {/*    label = "Поиск по каталогу"*/}
-            {/*    text = '<svg*/}
-            {/*    className="icon"*/}
-            {/*    viewBox="0 0 24 24"*/}
-            {/*    aria-hidden="true"*/}
-            {/*    fill="currentColor"*/}
-            {/*>*/}
-            {/*    <circle cx="11" cy="11" r="6" />*/}
-            {/*    <path d="m16 16 5 5" />*/}
-            {/*</svg>'*/}
-            {/*/>*/}
         </form>
     )
 }

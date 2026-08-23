@@ -1,41 +1,37 @@
 import './App.css';
 import Router from "./Router.jsx";
-import {useState, useEffect} from "react";
 import Home from "./pages/Home.jsx";
 import Catalog from "./pages/Catalog.jsx";
+import Cart from "./pages/Cart.jsx";
+import { ProductsProvider } from "./context/ProductContext.jsx";
+import { CartProvider } from "./context/CartContext.jsx";
 
 function App() {
-   const [cartCount, setCartCount] = useState(()=> {
-           const saveCount = localStorage.getItem('cartCount');
-           if (saveCount) {
-               return JSON.parse(saveCount);
-           }
-           return 0;
-       }
-    )
-
-    useEffect(() => {
-        localStorage.setItem('cartCount',JSON.stringify(cartCount));
-    },[cartCount]);
-    const onAddToCart = (productId) => {
-        console.log(`adding product: ${productId}`);
-        setCartCount(cartCount => cartCount + 1);
-    }
-
 
     const routes = {
         '/':Home,
         '/catalog' : Catalog,
-        '*' : () => <div>Error page 404</div>
+        '*' : () => <div className='error'>
+            <div className={'error__number'}>404</div>
+            <div className={'error__message'}>
+                <p>Страница не найдена.</p>
+                <p> Ccылка устарела или адрес введен не верно.</p>
+            </div>
+            <a href="/" className="btn">На главную</a>
+        </div>,
+        '/cart': Cart,
     }
-  return (
-    <>
-        <Router
-            routes = {routes}
-            cartCount = {cartCount}
-            onAddToCart = {onAddToCart}
-        />
-    </>
+
+    return (
+        <CartProvider >
+            <ProductsProvider>
+                <>
+                    <Router
+                        routes = {routes}
+                    />
+                </>
+            </ProductsProvider>
+        </CartProvider>
   )
 }
 
