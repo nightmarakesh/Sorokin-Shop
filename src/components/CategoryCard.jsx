@@ -8,7 +8,7 @@ const CategoryCard = (props) => {
   return (
       <a
           className={`${className} ${className}--${category}`}
-          href={`/catalog?category=${category}`}
+          href={`/catalog/${category}`}
       >
           <div className={`${className}__content`}>
               <h3>{title}</h3>

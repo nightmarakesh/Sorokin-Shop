@@ -9,6 +9,7 @@ const GridProducts = ({filteredProducts, products}) => {
                     model= {product.model}
                     price = {product.price}
                     marker = {product.marker}
+                    href = {product.href}
                     id={product.id}
                 />
             ))}

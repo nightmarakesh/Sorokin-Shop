@@ -8,12 +8,16 @@ const ProductCard = (props) => {
      model,
      price,
      marker = null,
-     id
+     id,
+     href
  } = props;
 
   return (
       <article className="product-card">
-            <ProductImg />
+            <ProductImg
+                href={href}
+                id = {id}
+            />
             <ProductGeneral
                 brand = {brand}
                 model={model}

@@ -8,7 +8,10 @@ const {
     price,
     id
 } = props;
-    const {onAddToCart} = useCart()
+    const { cartItems, onAddToCart, onDecreaseQty } = useCart();
+
+    const cartItem = cartItems.find((item) => item.id === id);
+    const quantity = cartItem?.quantity ?? 0;
 
     return (
 
@@ -25,17 +28,45 @@ const {
                 <strong className="product-card__price">
                     {price}
                 </strong>
-                <Button
-                    className="product-card"
-                    type="button"
-                    aria_label="Добавить товар в корзину"
-                    onClick={() => {
-                        onAddToCart(id)
-                    }
-                    }
-                >
-                    +
-                </Button>
+                {quantity === 0 ? (
+                    <Button
+                        className="product-card"
+                        type="button"
+                        aria_label="Добавить товар в корзину"
+                        onClick={() => {
+                            onAddToCart(id)
+                        }
+                        }
+                    >
+                        Добавить в корзину
+                    </Button>
+                )
+                :
+                    (
+                        <div className="product-card__qty">
+                            <button
+                                className="product-card__qty-btn"
+                                type="button"
+                                aria-label="Уменьшить количество"
+                                onClick={() => onDecreaseQty(id)}
+                            >
+                                −
+                            </button>
+                            <span className="product-card__qty-value">
+                            {quantity}
+                             </span>
+                            <button
+                                className="product-card__qty-btn"
+                                type="button"
+                                aria-label="Увеличить количество"
+                                onClick={() => onAddToCart(id)}
+                            >
+                                +
+                            </button>
+                        </div>
+                    )
+                }
+
             </div>
         </div>
     )
