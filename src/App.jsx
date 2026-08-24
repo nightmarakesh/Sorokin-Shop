@@ -5,6 +5,15 @@ import Catalog from "./pages/Catalog.jsx";
 import Cart from "./pages/Cart.jsx";
 import { ProductsProvider } from "./context/ProductContext.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
+import {FavoritesProvider} from "./context/FavoritesContext.jsx";
+import Favorites from "./pages/Favorites.jsx";
+import {UserProvider} from "./context/UserContext.jsx";
+import ForMen from "./pages/ForMen.jsx";
+import Profile from "./pages/Profile.jsx";
+import {OrderProvider} from "./context/OrderContext.jsx";
+import ForWomen from "./pages/ForWomen.jsx";
+import ForSport from "./pages/ForSport.jsx";
+import ForKids from "./pages/ForKids.jsx";
 
 function App() {
 
@@ -20,18 +29,31 @@ function App() {
             <a href="/" className="btn">На главную</a>
         </div>,
         '/cart': Cart,
+        '/favorites': Favorites,
+        '/catalog/men' : ForMen,
+        '/catalog/women' : ForWomen,
+        '/catalog/sport' : ForSport,
+        '/catalog/kids' : ForKids,
+        '/profile': Profile,
     }
 
     return (
         <CartProvider >
-            <ProductsProvider>
-                <>
-                    <Router
-                        routes = {routes}
-                    />
-                </>
-            </ProductsProvider>
-        </CartProvider>
+            <FavoritesProvider>
+                <UserProvider>
+                    <OrderProvider>
+                        <ProductsProvider>
+                            <>
+                                <Router
+                                    routes = {routes}
+                                />
+                            </>
+                        </ProductsProvider>
+                    </OrderProvider>
+                </UserProvider>
+            </FavoritesProvider>
+    </CartProvider>
+
   )
 }
 

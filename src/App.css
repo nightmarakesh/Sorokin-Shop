@@ -39,6 +39,7 @@ a {
     width: 100%;
     background-color: var(--color-white);
     border-bottom: 1px solid var(--color-border);
+
 }
 
 /* Промо-полоса */
@@ -1058,7 +1059,427 @@ a {
 .btn:hover {
     background-color: #1e73b3;
 }
-/*.--black{*/
-/*    color: var(--color-black);*/
-/*}*/
 
+/* Разметка корзины, а также кнопки для общего каталога */
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+    .cart-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+.cart-remove {
+    background: #fff;
+    color: #d9534f;
+    border: 1px solid #d9534f;
+}
+
+.cart-total {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.cart-checkout {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.cart-item__qty {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cart-item__qty-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item__qty-value {
+    min-width: 24px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.cart-item__remove {
+    background: none;
+    border: none;
+    color: #d9534f;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.cart-item__remove:hover {
+    text-decoration: underline;
+}
+
+.cart-total {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.cart-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .cart-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .cart-item__qty {
+        justify-content: center;
+    }
+}
+
+.product-card__qty {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.product-card__qty-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+}
+
+.product-card__qty-btn:hover {
+    background: #f5f5f5;
+}
+
+.product-card__qty-value {
+    min-width: 24px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden; /* Важно: обрезает всё, что вылезает за границы */
+}
+
+/* Сам блок под картинку — делаем его квадратным */
+.product-card__img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Гарантирует квадрат 1:1, высота = ширине */
+    background-color: #f8f8f8; /* Цвет фона, если фото не загрузилось */
+    border-radius: 8px;
+    overflow: hidden; /* Обрезает края, если картинка слишком большая */
+    position: relative;
+}
+
+/* Картинка внутри — магия, чтобы не растягивалась */
+.product-card__img img {
+    width: 100%;       /* Растягиваем на всю ширину контейнера */
+    height: 100%;      /* Растягиваем на всю высоту контейнера */
+    object-fit: cover; /* Ключевое свойство: заполняет блок, обрезая лишнее, но НЕ искажая пропорции */
+    display: block;    /* Убирает лишние отступы снизу у строчных элементов */
+    transition: transform 0.3s ease;
+}
+
+/* Эффект при наведении (зум) */
+.product-card:hover .product-card__img img {
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+/* Маркер поверх фото */
+.product-card__image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #f8f8f8;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.product-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-card__image img {
+    transform: scale(1.05);
+}
+
+/* Кнопка избранного — поверх фото в правом верхнем углу */
+.product-card-favorite {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.product-card-favorite:hover {
+    background: #fff;
+}
+.product-card__badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 10px;
+    background: #ff0000;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+
+.product-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+
+
+.profile-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.profile-stat {
+    flex: 1;
+    text-align: center;
+    padding: 1.5rem;
+    background: #f8f8f8;
+    border-radius: 12px;
+}
+
+.profile-stat__value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.profile-stat__label {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 0.25rem;
+}
+
+/* Секции */
+.profile-section {
+    margin-bottom: 2rem;
+}
+
+.profile-section__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.profile-section__head h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.profile-edit-btn {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px 14px;
+    cursor: pointer;
+    color: #666;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.profile-edit-btn:hover {
+    border-color: #333;
+    color: #333;
+}
+
+/* Форма */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+}
+
+.profile-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.profile-form__field span {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.profile-form__field input {
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.profile-form__field input:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.profile-form__actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.profile-cancel {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* Информация */
+.profile-info p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+/* Заказы */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.order-card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.order-card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.order-card__id {
+    font-weight: 600;
+}
+
+.order-card__date {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.order-card__total {
+    font-size: 1.1rem;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.order-item__qty {
+    color: #888;
+}
+
+.profile-empty {
+    color: #888;
+    padding: 1rem 0;
+}

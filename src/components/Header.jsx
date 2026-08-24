@@ -13,10 +13,11 @@ const Header = ({searchQuery, setSearchQuery}) => {
     const navItems = [
         {label: 'Главная', href : '/', classNameMark : path === '/' ? '--active' : '' },
         {label: 'Каталог', href : '/catalog', classNameMark : path === '/catalog' ? '--active' : '' },
-        {label: 'Для мужчин', href : '/catalog?category=men', classNameMark : path === '/catalog?category=men' ? '--active' : '' },
-        {label: 'Для женщин', href : '/catalog?category=women', classNameMark : path === '/catalog?category=women' ? '--active' : '' },
-        {label: 'Новинки', href : '/catalog?category=new', classNameMark : path === '/catalog?category=new' ? '--active' : '' },
-        {label: 'Скидки', href : '/catalog?category=sale', classNameMark : '--sale' }
+        {label: 'Для мужчин', href : '/catalog/men', classNameMark : path === '/catalog/men' ? '--active' : '' },
+        {label: 'Для женщин', href : '/catalog/women', classNameMark : path === '/catalog/women' ? '--active' : '' },
+        {label: 'Для спорта', href : '/catalog/sport', classNameMark : path === '/catalog/sport' ? '--active' : '' },
+        {label: 'Для детей', href : '/catalog/kids', classNameMark : path === '/catalog/kids' ? '--active' : '' },
+        {label: 'Новинки и скидки', href : '/catalog/sale', classNameMark : '--sale' }
     ]
     const actions = [
         {label : 'Избранное', href : '/favorites', icon : <IconFavorite/>, counter : null},
