@@ -15,6 +15,7 @@ const EmailForm = () => {
                 className="newsletter-form"
                 type="submit"
                 children="Подписаться"
+                onClick={() => alert("Спасибо, что доверяете нам")}
           />
       </form>
   )
