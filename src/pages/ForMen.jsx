@@ -1,10 +1,11 @@
-import {useMenProducts} from "../context/ProductContext.jsx";
-import CategoryPage from "../components/CategoryPage.jsx";
-import {useSearch} from "../hooks/useSearch.jsx";
+import { useProducts} from "../context/ProductContext.jsx";
+import CategoryPage from "../features/Catalog/CategoryPage.jsx";
+import { useSearch } from "../hooks/useSearch.jsx";
 
 const ForMen = () => {
-    const menProducts = useMenProducts()
+    const {loading, menProducts} = useProducts();
     const { searchQuery, setSearchQuery, filteredProducts} = useSearch(menProducts);
+    if(loading) return <div>Загрузка товаров..</div>
     return (
         <CategoryPage
             products={menProducts}

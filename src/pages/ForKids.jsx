@@ -1,10 +1,12 @@
-import {useKidsProducts} from "../context/ProductContext.jsx";
+import { useProducts} from "../context/ProductContext.jsx";
 import {useSearch} from "../hooks/useSearch.jsx";
-import CategoryPage from "../components/CategoryPage.jsx";
+import CategoryPage from "../features/Catalog/CategoryPage.jsx";
 
 const ForKids = () => {
-    const kidsProducts = useKidsProducts()
+    const {loading, kidsProducts} = useProducts();
     const { searchQuery, setSearchQuery, filteredProducts} = useSearch(kidsProducts);
+
+    if(loading) return <div>Загрузка товаров..</div>
     return (
         <CategoryPage
             products={kidsProducts}

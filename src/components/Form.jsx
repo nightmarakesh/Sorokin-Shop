@@ -1,5 +1,5 @@
 import Field from "./Field.jsx";
-import Button from "./Button.jsx";
+import Button from "./Button/Button.jsx";
 
 const Form = (props) => {
     const {
@@ -9,7 +9,8 @@ const Form = (props) => {
         typeField = id,
         placeholder = 'Введите...',
         label = id,
-        text
+        children,
+        onClick
     } = props
     return (
         <form className={className}>
@@ -23,7 +24,8 @@ const Form = (props) => {
             <Button
                 className={className}
                 type={typeButton}
-                children={text}
+                children={children}
+                onClick={onClick}
             />
         </form>
     )

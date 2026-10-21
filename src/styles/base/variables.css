@@ -1,0 +1,11 @@
+:root {
+    --color-black: #111111;
+    --color-white: #ffffff;
+    --color-gray-100: #f5f5f5;
+    --color-gray-200: #e8e8e8;
+    --color-gray-500: #777777;
+    --color-red: #e53935;
+    --color-border: #dddddd;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+}

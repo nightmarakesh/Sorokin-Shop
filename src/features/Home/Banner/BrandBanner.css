@@ -1,0 +1,56 @@
+.brand-banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    min-height: 380px;
+    margin-bottom: 96px;
+    padding: 56px 64px;
+    overflow: hidden;
+    color: var(--color-white);
+    background-color: #242424;
+    border-radius: var(--radius-md);
+}
+
+.brand-banner__content {
+    max-width: 480px;
+}
+
+.brand-banner__title {
+    margin: 0 0 20px;
+    font-size: clamp(32px, 4vw, 58px);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.brand-banner__description {
+    max-width: 360px;
+    margin: 0 0 28px;
+    color: #bdbdbd;
+    line-height: 1.6;
+}
+
+.brand-banner__button{
+    color: var(--color-white);
+    background-color: var(--color-red);
+}
+
+.brand-banner__button:hover {
+    color: var(--color-black);
+    background-color: var(--color-white);
+}
+
+.brand-banner-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+}
+
+.brand-banner-visual__mark {
+    color: #3b3b3b;
+    font-size: clamp(120px, 18vw, 280px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -20px;
+}
